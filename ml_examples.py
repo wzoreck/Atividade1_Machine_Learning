@@ -5,11 +5,7 @@ import pickle
 import pandas as pandas
 import numpy as numpy
 import seaborn as seaborn
-import matplotlib.pyplot as pyplot
-from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
@@ -98,7 +94,7 @@ naive_bayes_car_evaluation = GaussianNB()
 naive_bayes_car_evaluation.fit(X_car_attributes_training, y_car_class_training)
 
 ## Teste
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+from sklearn.metrics import accuracy_score, classification_report
 
 previsions_car_evaluation = naive_bayes_car_evaluation.predict(X_car_attributes_test)
 
@@ -141,7 +137,7 @@ accuracy_score(y_car_class_test, predictions)
 cm = ConfusionMatrix(tree_car_evaluation)
 cm.fit(X_car_attributes_training, y_car_class_training)
 cm.score(X_car_attributes_test, y_car_class_test)
-# Precisão 0.98
+# Precisão 0.97
 
 
 ########### 03 - Random Forest ###########
